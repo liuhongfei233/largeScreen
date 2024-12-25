@@ -1,0 +1,76 @@
+/* 卡片标题样式*/
+.titleBox{
+    height: 52px;
+    line-height: 52px;
+    background: url('../assets/bg_title.png') no-repeat center center;
+    background-size: 100% 100%;
+    font-family: SourceHanSansCN, SourceHanSansCN;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-style: normal;
+    text-transform: none;
+    display: flex;
+    align-items: center;
+    .title{
+        margin-left: 30px;
+        font-size: 30px;
+        color: #FFFFFF;
+    }
+    .desc{
+        font-size: 26px;
+        color:#7AABEA;
+        
+    }
+}
+/* 轮播表格样式 */
+.parent {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    transition: none;
+  }
+  
+  .parent::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* 设置的子盒子高度大于父盒子，产生溢出效果 */
+  .child {
+    height: 800px;
+    scroll-behavior: smooth;
+  
+  }
+
+  /* tr组件样式*/
+  .tr{
+    font-family: SourceHanSansCN, SourceHanSansCN;
+    font-weight: bold;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    .tr_name{
+      margin-right: 7px;
+      font-size: 18px;
+    }
+    .tr_content{
+      text-align: right;
+      width: 80px;
+      height: 32px;
+      background: #0A1729;
+      border: 1px solid #1B3660;
+      line-height: 32px;
+      font-size: 22px;
+      padding-right: 5px;
+      box-sizing: border-box;
+    }
+    .tr_unit{
+      color: #BAC8D8;
+      font-size: 18px;
+      margin-left: 10px;
+    }
+  }
+ 
+  

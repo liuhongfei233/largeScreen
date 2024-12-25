@@ -1,0 +1,156 @@
+.right_container{
+    width: 2560px;
+    height: 1440px;
+    background: url("../assets/right/bg_right.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+.right_header{
+    height: 180px;
+    background: url("../assets/right/header_right.png") no-repeat center center;
+    background-size: 100% 100%;
+    font-family: SourceHanSansCN, SourceHanSansCN;
+    font-weight: bold;
+    font-size: 68px;
+    color: #DB4D4D;
+    line-height: 68px;
+    letter-spacing: 55px;
+    font-style: normal;
+    overflow: hidden;
+    .right_header_box{
+        height: 86px;
+        line-height: 86px;
+        margin: 39px 0 0 40px;
+    }
+}
+.right_content{
+    height: 1260px;
+    display: flex;
+    justify-content: space-between;
+}
+.right_content_left{
+    width: 1235px;
+    margin: 0 0 76px 0;
+    .right_content_left_top{
+        box-sizing: border-box;
+        height: 266px;
+        padding-top: 85px;
+        .railway{
+            font-size: 0;
+        }
+        .warehouse{
+            margin-left:121px;
+            height: 153px;
+            display: flex;
+            justify-content: space-between;
+            padding-right: 106px;
+            box-sizing: border-box;
+            align-items: center;
+            .warehouse_main{
+                height: 96px;
+                display: flex;
+                align-items: center;
+                .warehouse_box{
+                    width: 66px;
+                    height: 91px;
+                    font-size: 0;
+                }
+                .warehouse_list{
+                    width: 106px;
+                    height: 96px;
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+            .warehouse_sub{
+                width: 632px;
+                height: 96px;
+                background: url("../assets/left/bg_warehouse.png") no-repeat center center;
+                background-size: 100% 100%;
+                padding: 18px 8px;
+                box-sizing: border-box;
+                display: flex;
+                .warehouse_subox{
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    .warehouse_subox_right{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        color: #fff;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+    .right_content_left_bottom{
+        margin-right: 72px;
+        margin-top: 25px;
+        display: flex;
+        justify-content: space-between;
+        .heatVideo{
+            width: 341px;
+            height: 192px;
+        }
+        .bottom_main{
+            width: 768px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+.right_content_right{
+    width: 1208px;
+    padding: 9px 28px 34px 0;
+    box-sizing: border-box;
+    .right_content_right_top{
+        height: 846px;
+    }
+    .right_bottom_container {
+        margin-top: 14px;
+        border: #000 1px solid;
+        box-sizing: border-box;
+        height: 305px;
+        background: url("../assets/bg_chart.png") no-repeat center center;
+        background-size: 100% 100%;
+        position: relative;
+    }
+    .right_bottom_content{
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    height: 265px;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    /* 在你的 CSS 文件中添加以下代码 */
+    .fade-enter {
+      opacity: 0;
+    }
+    
+    .fade-enter-active {
+      opacity: 1;
+      transition: all 0.5s;
+    }
+    .fade-enter-done {
+      opacity: 1;
+      transition: all 0.5s;
+    }
+    
+    .fade-exit {
+      opacity: 1;
+    }
+    
+    .fade-exit-active {
+      opacity: 0;
+    }
+    .fade-exit-done {
+      opacity: 0;
+      transition: all 0.5s;
+    }
+    
+}

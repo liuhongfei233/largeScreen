@@ -1,0 +1,98 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  /* 防止滚动条出现 */
+  overflow: hidden; 
+}
+body {
+  background-color: #0b232f;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.chartContainer{
+  height: 322px;
+  margin-top: 14px;
+  background: url("./assets/bg_chart.png") no-repeat center center;
+  background-size: 100% 100%;
+}
+/*窑子公共样式*/
+.yao{
+  .yao_main{
+      width: 1220px;
+      height: 701px;
+  }
+  position: relative;
+  .liangdou{
+      width: 104px;
+      height: 81px;
+      position: absolute;
+      top: 30px;
+      left: 87px;
+  }
+  .player{
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 333px;
+  }
+  .CEMS{
+      width: 241px;
+      height: 293px;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      top: 41px;
+      right: 102px; 
+      .CEMS_main{
+          margin-left: 38px;
+      }
+  }
+  .yao_left{
+      position: absolute;
+      top: 260px;
+      left: 300px;
+  }
+  .yao_right{
+      position: absolute;
+      top: 185px;
+      left: 618px;
+  }
+  .yao_bottom_left{
+      position: absolute;
+      top: 511px;
+      left: 278px;
+      display: flex;
+      flex-direction: column;
+  }
+  .yao_bottom_right{
+      position: absolute;
+      top: 541px;
+      left: 607px;
+  }
+  .yao_right_bottom{
+      position: absolute;
+      left: 800px;
+      bottom: 133px;
+      display: flex;
+      align-items: end;
+  }
+  .yao_right_bottom2{
+      position: absolute;
+      top:435px;
+      right: 89px;
+  }
+  .yao_top_right{
+      position: absolute;
+      top: 91px;
+      left: 18px;
+  }
+}
