@@ -10,7 +10,7 @@ const cameras = () => {
           controls={true}
           autoPlay={true}
           muted={true}
-          url="https://114.55.89.115:8443/live1/test1.live.flv"
+          url="https://114.55.89.115:8443/live/test.live.flv"
         />
         <div className="carmeraBox_title">1#窑视频窗口</div>
       </div>
@@ -20,7 +20,7 @@ const cameras = () => {
           controls={true}
           autoPlay={true}
           muted={true}
-          url="https://114.55.89.115:8443/live1/test1.live.flv"
+          url="https://114.55.89.115:8443/live/test.live.flv"
         />
         <div className="carmeraBox_title">2#窑视频窗口</div>
       </div>
@@ -30,7 +30,7 @@ const cameras = () => {
           controls={true}
           autoPlay={true}
           muted={true}
-          url="https://114.55.89.115:8443/live1/test1.live.flv"
+          url="https://114.55.89.115:8443/live/test.live.flv"
         />
         <div className="carmeraBox_title">3#窑视频窗口</div>
       </div>

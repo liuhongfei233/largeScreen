@@ -11,6 +11,20 @@ const Top = () => {
           src={require("../../assets/center/railway.png")}
           alt=""
         />
+        <img
+          width={66}
+          height={91}
+          style={{ position: "absolute", top: -150, left: 0 }}
+          src={require("../../assets/left/wh_close.png")}
+          alt=""
+        />
+        <img
+          width={66}
+          height={91}
+          style={{ position: "absolute", top: -150, left: 80 }}
+          src={require("../../assets/left/wh_close.png")}
+          alt=""
+        />
       </div>
       <div className="warehouse">
         <div className="warehouse_main">

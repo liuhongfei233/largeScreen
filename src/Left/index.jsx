@@ -10,17 +10,8 @@ import RightTop from "./right/top";
 import Center from "./right/center";
 import Bottom from "./right/bottom";
 import "./index.scss";
-import { useWebSocket } from "@/components/webSocket";
 
 export default function Index({ isShow }) {
-  const { messages, connectWebSocket } = useWebSocket(
-    "ws://114.55.89.115:58080/webSocket"
-  );
-  console.log("🚀 ~ Index ~ messages:", messages);
-  useEffect(() => {
-    // connectWebSocket();
-  }, []);
-
   return (
     <Adaptive isShow={isShow}>
       <div className="left_container">

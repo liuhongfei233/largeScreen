@@ -35,7 +35,6 @@ export function useWebSocket(
     };
 
     websocketRef.current.onmessage = (event) => {
-      console.log("🚀 ~ connectWebSocket ~ event:", event);
       onMessage && onMessage(event);
       setMessages((prevMessages) => [...prevMessages, event.data]); // 将消息保存到状态
     };

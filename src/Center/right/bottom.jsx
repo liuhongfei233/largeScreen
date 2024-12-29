@@ -11,7 +11,7 @@ const Bottom = () => {
         controls={true}
         autoPlay={true}
         muted={true}
-        url="https://114.55.89.115:8443/live1/test1.live.flv"
+        url="https://114.55.89.115:8443/live/test.live.flv"
       />
       <div className="center_content_right_bottom_right">
         <img

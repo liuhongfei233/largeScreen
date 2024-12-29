@@ -26,6 +26,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        .clock{
+            width: 90px;
+        }
         .weather{
             width: 440px;
         }
@@ -47,6 +50,7 @@
             font-size: 0;
             height: 5px;
             width: 383px;
+            position: relative;
         }
         .warehouse{
             margin-left:106px;
@@ -128,4 +132,10 @@
 .heatVideo{
     width: 341px;
     height: 192px;
+}
+.svgaPlayer{
+    position: absolute;
+    height: 28px;
+    width: 60px;
+    left: -30px;
 }

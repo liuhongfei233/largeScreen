@@ -1,7 +1,7 @@
 import React from "react";
 import Player from "@/components/player";
 import TR from "@/components/tr";
-import { Progress } from "antd";
+import CountDown from "@/components/countDown";
 
 const Center = () => {
   return (
@@ -26,14 +26,14 @@ const Center = () => {
           controls={true}
           autoPlay={true}
           muted={true}
-          url="https://114.55.89.115:8443/live1/test1.live.flv"
+          url="https://114.55.89.115:8443/live/test.live.flv"
         />
         <Player
           style={{ width: 238, height: 134, marginTop: 10 }}
           controls={true}
           autoPlay={true}
           muted={true}
-          url="https://114.55.89.115:8443/live1/test1.live.flv"
+          url="https://114.55.89.115:8443/live/test.live.flv"
         />
       </div>
       <div className="CEMS">
@@ -158,16 +158,7 @@ const Center = () => {
         />
       </div>
       <div style={{ position: "absolute", left: 390, bottom: 0 }}>
-        <Progress
-          type="circle"
-          percent={70}
-          size={55}
-          format={() => (
-            <span style={{ fontSize: 22, fontWeight: "bold", color: "#fff" }}>
-              12s
-            </span>
-          )}
-        />
+        <CountDown total={12} />
       </div>
       <div style={{ position: "absolute", left: 572, top: 75 }}>
         <TR content="上限" />

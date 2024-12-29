@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import * as echarts from "echarts";
 import "@/index.scss";
-import { line } from "@jiaminghi/data-view-react/lib/index-fcdce9c7";
 const Chart2 = () => {
   const chartRef = useRef(null);
   const option = {
@@ -136,11 +135,11 @@ const Chart2 = () => {
     const myChart = echarts.init(chartDom);
     myChart.setOption(option);
     //自动轮播方法
-    // 自动轮播的函数
     let currentIndex = -1; // 当前高亮图形在饼图数据中的下标
     let changePieInterval = setInterval(selectPie, 1000); // 设置自动切换高亮图形的定时器
 
     function highlightPie() {
+      if (myChart._disposed) return;
       // 取消所有高亮并高亮当前图形
       // 遍历饼图数据，取消所有图形的高亮效果
       for (var idx in option.series[0].data)

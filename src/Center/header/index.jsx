@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel } from "antd";
+import Clock from "@/components/clock";
 import "../index.scss";
 const STYLE = {
   fontSize: 24,
@@ -11,7 +12,9 @@ const Index = () => {
     <div className="center_header_box">
       <div className="title">梅山钢铁套筒窑</div>
       <div className="time">
-        <span>17:52:00</span>
+        <div className="clock">
+          <Clock />
+        </div>
         <div className="weather">
           <Carousel autoplay={true} dots={false} autoplaySpeed={10000}>
             <div>

@@ -1,6 +1,7 @@
 import React from "react";
 import Player from "@/components/player";
 import TR from "@/components/tr";
+import SvgaPlayer from "@/components/svgaPlayer";
 import "../index.scss";
 
 const Bottom = () => {
@@ -32,9 +33,13 @@ const Bottom = () => {
             <TR content={0} unit="M" />
           </div>
         </div>
-        <div style={{ marginLeft: 39 }}>
+        <div style={{ marginLeft: 39, position: "relative" }}>
+          <SvgaPlayer
+            url={require("@/assets/svga/pidai.svga")}
+            className={"svgaPlayer"}
+          />
           <img
-            height="28px"
+            height={28}
             width={707}
             src={require("@/assets/center/track.png")}
           />
@@ -45,7 +50,7 @@ const Bottom = () => {
         controls={true}
         autoPlay={true}
         muted={true}
-        url="https://114.55.89.115:8443/live1/test1.live.flv"
+        url="https://114.55.89.115:8443/live/test.live.flv"
       />
     </div>
   );

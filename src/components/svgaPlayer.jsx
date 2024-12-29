@@ -11,7 +11,11 @@ const SvgaPlayer = ({ url, className }) => {
       //加载并回调
       player.setVideoItem(videoItem);
       player.startAnimation(); //开始播放动画
-      player.clearsAfterStop = true;
+      // player.loops = 1; //播放次数
+      player.onFinished(() => {
+        console.log("播放结束");
+      });
+      player.clearsAfterStop = false; //停止播放时是否清空画布
       // clear(): 清空动画画布。
       // startAnimation() //开始播放动画。
       // pauseAnimation(): 暂停播放动画。
@@ -20,7 +24,6 @@ const SvgaPlayer = ({ url, className }) => {
       // on(event, callback): 添加事件监听器，常见事件包括 onFinished（动画播放完毕时触发）、onFrame（动画帧更新时触发）等。
     });
   };
-  // <SvgaPlayer url="/pidai.svga" className="pidai" />; //用法
   return (
     <div>
       <div id="demoCanvas" className={className}></div>

@@ -7,7 +7,6 @@ export default function Index({
   height = "1440",
   isShow = true,
 }) {
-  console.log("🚀 ~ isShow:", isShow);
   // 使用useState定义一个状态变量style，并初始化为包含width, height和transform的对象
   const [style, setStyle] = useState({
     width: width + "px",

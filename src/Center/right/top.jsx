@@ -5,11 +5,25 @@ import "../index.scss";
 const Top = () => {
   return (
     <div className="center_content_comm_top" style={{ paddingTop: 85 }}>
-      <div style={{ textAlign: "right" }}>
+      <div style={{ textAlign: "right", position: "relative" }}>
         <img
           width={1149}
           height={28}
           src={require("../../assets/center/track2.png")}
+          alt=""
+        />
+        <img
+          width={66}
+          height={91}
+          style={{ position: "absolute", top: -127, right: 0 }}
+          src={require("../../assets/left/wh_close.png")}
+          alt=""
+        />
+        <img
+          width={66}
+          height={91}
+          style={{ position: "absolute", top: -127, right: 80 }}
+          src={require("../../assets/left/wh_close.png")}
           alt=""
         />
       </div>
