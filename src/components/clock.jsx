@@ -10,7 +10,7 @@ const Clock = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  return <div>{currentTime.toLocaleTimeString()}</div>;
+  return <div>{currentTime.toLocaleTimeString([], { hour12: false })}</div>;
 };
 
 export default Clock;

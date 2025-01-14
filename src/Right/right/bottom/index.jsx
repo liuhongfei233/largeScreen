@@ -40,22 +40,22 @@ const Index = () => {
         }
       ></TitleBox>
       <div className="right_bottom_container">
-        <CSSTransition
+        {/* <CSSTransition
           unmountOnExit
           in={current == 0}
           timeout={500}
           classNames="fade"
-        >
-          <Cameras />
-        </CSSTransition>
-        <CSSTransition
+        > */}
+        <Cameras />
+        {/* </CSSTransition> */}
+        {/* <CSSTransition
           unmountOnExit
           in={current == 1}
           timeout={500}
           classNames="fade"
         >
           <Cameras2 />
-        </CSSTransition>
+        </CSSTransition> */}
       </div>
     </>
   );

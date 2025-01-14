@@ -12,14 +12,16 @@
     font-weight: bold;
     font-size: 68px;
     color: #DB4D4D;
-    line-height: 68px;
+    // line-height: 68px;
     letter-spacing: 55px;
     font-style: normal;
     overflow: hidden;
+    position: relative;
     .right_header_box{
         height: 86px;
         line-height: 86px;
-        margin: 39px 0 0 40px;
+        margin: 39px 0 0 70px;
+        overflow: hidden;
     }
 }
 .right_content{
@@ -29,7 +31,7 @@
 }
 .right_content_left{
     width: 1235px;
-    margin: 0 0 76px 0;
+    margin: 0 0 34px 0;
     .right_content_left_top{
         box-sizing: border-box;
         height: 266px;
@@ -88,6 +90,8 @@
         margin-right: 72px;
         margin-top: 25px;
         display: flex;
+        height: 234px;
+        box-sizing: border-box;
         justify-content: space-between;
         .heatVideo{
             width: 341px;
@@ -117,12 +121,7 @@
         position: relative;
     }
     .right_bottom_content{
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-    height: 265px;
+    height: 100%;
       padding: 20px;
       display: flex;
       justify-content: space-between;

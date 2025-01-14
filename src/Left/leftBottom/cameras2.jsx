@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import Player from "@/components/player";
+import { GlobalContext } from "@/components/globalContext";
 import "./index.scss";
-const cameras = () => {
+const Cameras2 = () => {
+  const { state } = useContext(GlobalContext);
+  const cameras = state?.cameras || [];
   return (
     <div className="left_bottom_content">
       <div className="carmeraBox">
         <Player
-          className="carmeraBox_content"
+          width={368}
+          height={270}
           controls={true}
           autoPlay={true}
           muted={true}
-          url="https://114.55.89.115:8443/live/test.live.flv"
+          url={cameras[3]}
         />
-        <div className="carmeraBox_title">4#窑视频窗口</div>
       </div>
-      <div className="carmeraBox">
+      {/* <div className="carmeraBox">
         <Player
           className="carmeraBox_content"
           controls={true}
@@ -33,8 +36,8 @@ const cameras = () => {
           url="https://114.55.89.115:8443/live/test.live.flv"
         />
         <div className="carmeraBox_title">6#窑视频窗口</div>
-      </div>
+      </div> */}
     </div>
   );
 };
-export default cameras;
+export default Cameras2;

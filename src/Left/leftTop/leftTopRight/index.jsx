@@ -1,22 +1,31 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Carousel } from "antd";
 import TitleBox from "@/components/titleBox";
-import Chart1 from "./chart1";
+import { GlobalContext } from "@/components/globalContext";
+import Chart from "./chart";
 
 const LeftTopRight = () => {
-  const afterChange = (num) => {
-    // console.log("🚀 ~ afterChange ~ num:", num);
+  const { state } = useContext(GlobalContext);
+  const report = state?.report || [];
+  const [num, setNum] = useState(0);
+  const afterChange = (index) => {
+    setNum(index);
   };
   return (
     <>
-      <TitleBox title="质量" desc="活性度"></TitleBox>
+      <TitleBox
+        title={report[1]?.label}
+        desc={report[1]?.data && report[1]?.data[num]?.name}
+      />
       <Carousel
         autoplay={true}
         dots={false}
-        autoplaySpeed={10000}
+        autoplaySpeed={20000}
         afterChange={afterChange}
       >
-        <Chart1 />
+        {report[1]?.data?.map((item, index) => {
+          return <Chart key={index} data={item} />;
+        })}
       </Carousel>
     </>
   );

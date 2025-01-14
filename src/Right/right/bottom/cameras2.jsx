@@ -6,7 +6,8 @@ const cameras = () => {
     <div className="left_bottom_content">
       <div className="carmeraBox">
         <Player
-          className="carmeraBox_content"
+          width={368}
+          height={207}
           controls={true}
           autoPlay={true}
           muted={true}
@@ -16,7 +17,8 @@ const cameras = () => {
       </div>
       <div className="carmeraBox">
         <Player
-          className="carmeraBox_content"
+          width={368}
+          height={207}
           controls={true}
           autoPlay={true}
           muted={true}
@@ -26,7 +28,8 @@ const cameras = () => {
       </div>
       <div className="carmeraBox">
         <Player
-          className="carmeraBox_content"
+          width={368}
+          height={207}
           controls={true}
           autoPlay={true}
           muted={true}

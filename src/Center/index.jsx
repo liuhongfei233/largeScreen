@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import Adaptive from "@/Adaptive";
 import LeftCenter from "./left/center";
 import RightCenter from "./right/center";
@@ -7,12 +7,9 @@ import LeftBottom from "./left/bottom";
 import RightTop from "./right/top";
 import RightBottom from "./right/bottom";
 import Header from "./header";
-import { GlobalContext } from "@/components/globalContext";
 import "./index.scss";
 
 export default function Index({ isShow }) {
-  const { state, setState } = useContext(GlobalContext);
-  // console.log("🚀 ~ Index ~ state:", state);
   return (
     <Adaptive isShow={isShow}>
       <div className="center_container">

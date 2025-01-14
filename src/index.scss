@@ -4,6 +4,26 @@ html, body {
   /* 防止滚动条出现 */
   overflow: hidden; 
 }
+:global{
+  /* 隐藏滚动条滑块 */
+.scroll-container {
+  overflow: scroll;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: transparent transparent; /* Firefox */
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Chrome, Safari, and Opera */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Chrome, Safari, and Opera */
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent; /* Chrome, Safari, and Opera */
+}
+}
 body {
   background-color: #0b232f;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -25,11 +45,27 @@ code {
 }
 /*窑子公共样式*/
 .yao{
+    position: relative;
   .yao_main{
       width: 1220px;
       height: 701px;
+      .yao_content{
+        width: 1220px;
+        height: 701px;
+        position: relative;
+        .yao_img{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            width: 100%;
+            svg{
+              position: absolute;
+            }
+        }
+      }
   }
-  position: relative;
   .liangdou{
       width: 104px;
       height: 81px;
@@ -44,7 +80,7 @@ code {
       top: 333px;
   }
   .CEMS{
-      width: 241px;
+      // width: 241px;
       height: 293px;
       position: absolute;
       display: flex;
@@ -95,4 +131,10 @@ code {
       top: 91px;
       left: 18px;
   }
+}
+.svgaPlayer{
+  position: absolute;
+  height: 28px;
+  width: 60px;
+  left: -30px;
 }

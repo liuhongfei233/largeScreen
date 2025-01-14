@@ -1,3 +1,4 @@
+import { co } from "@jiaminghi/data-view-react";
 import { useCallback, useRef, useState } from "react";
 
 export function useWebSocket(
@@ -8,7 +9,18 @@ export function useWebSocket(
 ) {
   const [isConnected, setIsConnected] = useState(false); //连接状态
   const [reconnectAttempts, setReconnectAttempts] = useState(0); //连接次数
-  const [messages, setMessages] = useState([]); // 用于存储消息
+  const [messages, setMessages] = useState({
+    yao1: {}, //1#窑数据
+    yao2: {}, //2#窑数据
+    yao3: {}, //3#窑数据
+    yao4: {}, //4#窑数据
+    weather: {}, //天气数据
+    title: [], //标题数据
+    alarms: [], //告警数据
+    cameras: [], // 摄像头数据
+    report: [], //报表数据
+    common: {}, //公共数据
+  }); // 用于存储消息
   const websocketRef = useRef(null);
   const reconnectTimeoutRef = useRef(null); //重连定时器
   //手动关闭状态
@@ -36,7 +48,61 @@ export function useWebSocket(
 
     websocketRef.current.onmessage = (event) => {
       onMessage && onMessage(event);
-      setMessages((prevMessages) => [...prevMessages, event.data]); // 将消息保存到状态
+      const data = JSON.parse(event.data).data;
+      const code = JSON.parse(event.data).code;
+      if (code == 1) {
+        setMessages((prevMessages) => ({
+          ...prevMessages,
+          report: data,
+        }));
+      } else if (code == 2) {
+        if (data?.kilnNum === 1) {
+          setMessages((prevMessages) => ({
+            ...prevMessages,
+            yao1: data,
+          }));
+        } else if (data?.kilnNum === 2) {
+          setMessages((prevMessages) => ({
+            ...prevMessages,
+            yao2: data,
+          }));
+        } else if (data?.kilnNum === 3) {
+          setMessages((prevMessages) => ({
+            ...prevMessages,
+            yao3: data,
+          }));
+        } else if (data?.kilnNum === 4) {
+          setMessages((prevMessages) => ({
+            ...prevMessages,
+            yao4: data,
+          }));
+        } else if (data?.kilnNum === 5) {
+          setMessages((prevMessages) => ({
+            ...prevMessages,
+            common: data,
+          }));
+        }
+      } else if (code == 3) {
+        setMessages((prevMessages) => ({
+          ...prevMessages,
+          alarms: data,
+        }));
+      } else if (code == 4) {
+        setMessages((prevMessages) => ({
+          ...prevMessages,
+          weather: data,
+        }));
+      } else if (code == 5) {
+        setMessages((prevMessages) => ({
+          ...prevMessages,
+          cameras: data?.mainStream,
+        }));
+      } else if (code == 6) {
+        setMessages((prevMessages) => ({
+          ...prevMessages,
+          title: data,
+        }));
+      }
     };
 
     websocketRef.current.onerror = (event) => {

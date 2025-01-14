@@ -1,37 +1,55 @@
-import React from "react";
-import { Carousel } from "antd";
+import React, { useContext } from "react";
 import Clock from "@/components/clock";
+import { GlobalContext } from "@/components/globalContext";
 import "../index.scss";
-const STYLE = {
-  fontSize: 24,
-  color: "#fff",
-  marginRight: 15,
-};
 const Index = () => {
+  const { state } = useContext(GlobalContext);
+  const data = state?.weather || {};
+  const title = state?.title || [];
   return (
     <div className="center_header_box">
-      <div className="title">梅山钢铁套筒窑</div>
+      <div
+        onClick={() => window.open("/#/left")}
+        style={{
+          position: "absolute",
+          left: 15,
+          top: 48,
+          zIndex: 999,
+          cursor: "pointer",
+          fontSize: 0,
+          overflow: "hidden",
+        }}
+      >
+        <img
+          width={52}
+          height={48}
+          src={require("../../assets/left.png")}
+          alt=""
+        />
+      </div>
+      <div
+        onClick={() => window.open("/#/right")}
+        style={{
+          position: "absolute",
+          right: 15,
+          top: 48,
+          zIndex: 999,
+          cursor: "pointer",
+          fontSize: 0,
+        }}
+      >
+        <img
+          width={52}
+          height={48}
+          src={require("../../assets/right.png")}
+          alt=""
+        />
+      </div>
+      <div className="title">{title[2]?.content}</div>
       <div className="time">
+        <span style={{ marginRight: 15 }}>{data?.weatherDate}</span>
         <div className="clock">
           <Clock />
-        </div>
-        <div className="weather">
-          <Carousel autoplay={true} dots={false} autoplaySpeed={10000}>
-            <div>
-              <span style={{ ...STYLE, marginLeft: 20 }}>2024-12-23</span>
-              <span style={STYLE}>星期四</span>
-              <span style={{ ...STYLE, opacity: 0.5 }}>｜</span>
-              <span style={{ ...STYLE, color: "#FFAC23" }}>阴天</span>
-              <span style={STYLE}>16℃</span>
-            </div>
-            <div>
-              <span style={{ ...STYLE, marginLeft: 20 }}>2024-02-24</span>
-              <span style={STYLE}>星期五</span>
-              <span style={{ ...STYLE, opacity: 0.5 }}>｜</span>
-              <span style={{ ...STYLE, color: "#FFAC23" }}>晴天</span>
-              <span style={STYLE}>16℃</span>
-            </div>
-          </Carousel>
         </div>
       </div>
     </div>

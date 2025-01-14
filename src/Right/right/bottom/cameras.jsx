@@ -1,40 +1,44 @@
-import React from "react";
+import React, { useContext } from "react";
 import Player from "@/components/player";
+import VideoPlayer from "@/components/videoPlayer";
+import { GlobalContext } from "@/components/globalContext";
 import "../../index.scss";
-const cameras = () => {
+const Cameras = () => {
+  const { state } = useContext(GlobalContext);
+  const cameras = state?.cameras || [];
   return (
     <div className="right_bottom_content">
-      <div className="carmeraBox">
+      <div>
         <Player
-          className="carmeraBox_content"
+          width={368}
+          height={270}
           controls={true}
           autoPlay={true}
           muted={true}
-          url="https://114.55.89.115:8443/live/test.live.flv"
+          url={cameras[16]}
         />
-        <div className="carmeraBox_title">1#窑视频窗口</div>
       </div>
       <div className="carmeraBox">
         <Player
-          className="carmeraBox_content"
+          width={368}
+          height={270}
           controls={true}
           autoPlay={true}
           muted={true}
-          url="https://114.55.89.115:8443/live/test.live.flv"
+          url={cameras[17]}
         />
-        <div className="carmeraBox_title">2#窑视频窗口</div>
       </div>
       <div className="carmeraBox">
         <Player
-          className="carmeraBox_content"
+          width={368}
+          height={270}
           controls={true}
           autoPlay={true}
           muted={true}
-          url="https://114.55.89.115:8443/live/test.live.flv"
+          url={cameras[18]}
         />
-        <div className="carmeraBox_title">3#窑视频窗口</div>
       </div>
     </div>
   );
 };
-export default cameras;
+export default Cameras;

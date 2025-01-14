@@ -1,5 +1,5 @@
 // App.js
-import React, { useEffect } from 'react';
+import React from 'react';
 import { HashRouter as Router, Route, Routes,Navigate } from 'react-router-dom';
 import Index from './Index/index';
 import Left from './Left';

@@ -9,7 +9,7 @@ const ScrollTable = (props) => {
     scrollStep = 2, // 滚动步长
   } = props;
 
-  const [isScrolle, setIsScrolle] = useState(dataSource.length >= 10);
+  const [isScrolle, setIsScrolle] = useState(true);
 
   const warper = useRef();
   const childDom1 = useRef();
@@ -18,7 +18,7 @@ const ScrollTable = (props) => {
 
   // 开始滚动
   useEffect(() => {
-    if (!childDom2.current || !childDom1.current) return;
+    if (!childDom2.current || !childDom1.current || !warper.current) return;
 
     // 十条以上数据才开始滚动
     if (dataSource.length >= 10) {
@@ -30,7 +30,7 @@ const ScrollTable = (props) => {
     let lastTime = 0;
 
     const scrollTable = (currentTime) => {
-      if (isScrolle) {
+      if (isScrolle && warper.current && childDom1.current) {
         if (currentTime - lastTime >= speed) {
           lastTime = currentTime;
           accumulatedScroll.current += scrollStep;
@@ -62,7 +62,7 @@ const ScrollTable = (props) => {
         cancelAnimationFrame(animationFrameId);
       }
     };
-  }, [isScrolle]);
+  }, [isScrolle, dataSource]);
 
   const hoverHandler = (flag) => {
     if (dataSource.length >= 10) {
@@ -91,14 +91,14 @@ const ScrollTable = (props) => {
                   background: index % 2 != 0 && "rgba(255, 255, 255, 0.06)",
                   border: index % 2 != 0 && "2px solid rgba(176,211,255,0.3)",
                 }}
-                key={item.key}
+                key={index}
               >
                 <div style={{ width: "15%", fontWeight: 800, marginLeft: 51 }}>
-                  {item.key}
+                  {index + 1}
                 </div>
-                <div style={{ width: "40%" }}>{item.content}</div>
-                <div style={{ width: "20%" }}>{item.name}</div>
-                <div style={{ width: "25%" }}>{item.time}</div>
+                <div style={{ width: "40%" }}>{item?.alarmContent}</div>
+                <div style={{ width: "20%" }}>{item?.deviceName}</div>
+                <div style={{ width: "25%" }}>{item?.createTime}</div>
               </div>
             );
           })}

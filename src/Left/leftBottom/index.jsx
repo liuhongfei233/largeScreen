@@ -1,33 +1,34 @@
-import React, { useState, useEffect } from "react";
-import { Carousel } from "antd";
+import React, { useContext, useState, useEffect } from "react";
+import Marquee from "react-fast-marquee";
+import Player from "@/components/player";
 import { CSSTransition } from "react-transition-group";
+import { GlobalContext } from "@/components/globalContext";
 import TitleBox from "@/components/titleBox";
 import Cameras from "./cameras";
 import Cameras2 from "./cameras2";
 import "./index.scss";
 const Index = () => {
+  const { state } = useContext(GlobalContext);
+  const cameras = state?.cameras || [];
   const [current, setCurrent] = useState(0);
   const List = [
     { key: 1, cameras: <Cameras /> },
     { key: 2, cameras: <Cameras2 /> },
   ];
-  const afterChange = (num) => {
-    // console.log("🚀 ~ afterChange ~ num:", num);
-  };
-  useEffect(() => {
-    const timer = setInterval(() => {
-      let num = current;
-      if (current == List.length - 1) {
-        setCurrent(0);
-      } else {
-        num++;
-        setCurrent(num);
-      }
-    }, 10000);
-    return () => {
-      clearInterval(timer);
-    };
-  }, [current]);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     let num = current;
+  //     if (current == List.length - 1) {
+  //       setCurrent(0);
+  //     } else {
+  //       num++;
+  //       setCurrent(num);
+  //     }
+  //   }, 10000);
+  //   return () => {
+  //     clearInterval(timer);
+  //   };
+  // }, [current]);
   return (
     <>
       <TitleBox
@@ -43,14 +44,14 @@ const Index = () => {
         }
       ></TitleBox>
       <div className="left_bottom_container">
-        <CSSTransition
+        {/* <CSSTransition
           unmountOnExit
           in={current == 0}
           timeout={500}
           classNames="fade"
-        >
-          <Cameras />
-        </CSSTransition>
+        > */}
+        <Cameras />
+        {/* </CSSTransition>
         <CSSTransition
           unmountOnExit
           in={current == 1}
@@ -58,16 +59,45 @@ const Index = () => {
           classNames="fade"
         >
           <Cameras2 />
-        </CSSTransition>
-        {/* <Carousel
-        autoplay={true}
-        dots={false}
-        autoplaySpeed={10000}
-        afterChange={afterChange}
-      >
-        <Cameras />
-        <Cameras2 />
-      </Carousel> */}
+        </CSSTransition> */}
+        {/* <Marquee speed={20}>
+          <Player
+            width={368}
+            height={285}
+            controls={true}
+            autoPlay={true}
+            muted={true}
+            url={cameras[0]}
+            style={{ marginRight: 10 }}
+          />
+          <Player
+            width={368}
+            height={285}
+            controls={true}
+            autoPlay={true}
+            muted={true}
+            url={cameras[1]}
+            style={{ marginRight: 10 }}
+          />
+          <Player
+            width={368}
+            height={285}
+            controls={true}
+            autoPlay={true}
+            muted={true}
+            url={cameras[2]}
+            style={{ marginRight: 10 }}
+          />
+          <Player
+            width={368}
+            height={285}
+            controls={true}
+            autoPlay={true}
+            muted={true}
+            url={cameras[3]}
+            style={{ marginRight: 10 }}
+          />
+        </Marquee> */}
       </div>
     </>
   );

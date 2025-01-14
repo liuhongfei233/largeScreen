@@ -38,7 +38,7 @@
   
   /* 设置的子盒子高度大于父盒子，产生溢出效果 */
   .child {
-    height: 800px;
+    height: auto;
     scroll-behavior: smooth;
   
   }
@@ -63,9 +63,21 @@
       background: #0A1729;
       border: 1px solid #1B3660;
       line-height: 32px;
-      font-size: 22px;
+      font-size: 18px;
       padding-right: 5px;
       box-sizing: border-box;
+    }
+    .alarm-bg {
+      color: #FFD2D2;
+      text-align: right;
+      width: 80px;
+      height: 32px;
+      border: 1px solid #1B3660;
+      line-height: 32px;
+      font-size: 18px;
+      padding-right: 5px;
+      box-sizing: border-box;
+      background: url("../assets/bg_alarm.png") no-repeat center center;
     }
     .tr_unit{
       color: #BAC8D8;
@@ -73,5 +85,22 @@
       margin-left: 10px;
     }
   }
+
+  .videoPlayer{
+    canvas{
+      // transform: none !important;
+      // -webkit-transform: none !important;
+      // -moz-transform: none !important;
+      // -ms-transform: none !important;
+      // -o-transform: none !important;
+}
+.jessibuca-controls-bottom{
+  // display: none !important;
+}
+.jessibuca-controls{
+  display: none !important;
+}
+  }
+
  
   

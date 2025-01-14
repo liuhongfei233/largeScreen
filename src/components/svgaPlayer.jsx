@@ -1,19 +1,29 @@
 import React, { useEffect } from "react";
 import SVGA from "svgaplayerweb";
-const SvgaPlayer = ({ url, className }) => {
+/**
+ *
+ * @param {*id} 画布id唯一
+ * @param {*url} 播放地址
+ * @param {*className} className
+ * @param {*style} 样式
+ * @param {*onFinish} 播放结束回调
+ * @param {*loops} 播放次数0 无限循环 默认0
+ * @returns
+ */
+const SvgaPlayer = ({ id, url, className, style, onFinish, loops = 0 }) => {
   useEffect(() => {
     bofang();
-  }, []);
+  }, [url, loops]);
   const bofang = () => {
-    var player = new SVGA.Player("#demoCanvas"); //创建实例
-    var parser = new SVGA.Parser("#demoCanvas"); //是否兼容
+    var player = new SVGA.Player(`#${id}`); //创建实例
+    var parser = new SVGA.Parser(`#${id}`); //是否兼容
     parser.load(url, function (videoItem) {
       //加载并回调
       player.setVideoItem(videoItem);
+      player.loops = loops; //播放次数
       player.startAnimation(); //开始播放动画
-      // player.loops = 1; //播放次数
       player.onFinished(() => {
-        console.log("播放结束");
+        onFinish && onFinish();
       });
       player.clearsAfterStop = false; //停止播放时是否清空画布
       // clear(): 清空动画画布。
@@ -24,11 +34,7 @@ const SvgaPlayer = ({ url, className }) => {
       // on(event, callback): 添加事件监听器，常见事件包括 onFinished（动画播放完毕时触发）、onFrame（动画帧更新时触发）等。
     });
   };
-  return (
-    <div>
-      <div id="demoCanvas" className={className}></div>
-    </div>
-  );
+  return <div id={id} className={className} style={style}></div>;
 };
 
 export default SvgaPlayer;

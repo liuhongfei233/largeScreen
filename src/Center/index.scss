@@ -9,9 +9,11 @@
     background: url("../assets/center/header_center.png") no-repeat center center;
     background-size: 100% 100%;
     overflow: hidden;
+    position: relative;
     .center_header_box{
        height: 180px;
        text-align: center;
+       overflow: hidden;
        .title{
         font-size: 42px;
         font-weight: bold;
@@ -20,7 +22,7 @@
         margin-top: 37px;
        }
        .time{
-        margin-top: 20px;
+        margin-top: 25px;
         font-size: 24px;
         color: #fff;
         display: flex;
@@ -49,7 +51,7 @@
         .railway{
             font-size: 0;
             height: 5px;
-            width: 383px;
+            width: 470px;
             position: relative;
         }
         .warehouse{
@@ -121,7 +123,7 @@
         margin-top: 25px;
         height: 234px;
         display: flex;
-        padding-left: 114px;
+        padding-left: 60px;
         box-sizing: border-box;
         .center_content_right_bottom_right{
             flex:1;
@@ -132,10 +134,4 @@
 .heatVideo{
     width: 341px;
     height: 192px;
-}
-.svgaPlayer{
-    position: absolute;
-    height: 28px;
-    width: 60px;
-    left: -30px;
 }

@@ -12,14 +12,15 @@
     font-weight: bold;
     font-size: 68px;
     color: #DB4D4D;
-    line-height: 68px;
     letter-spacing: 55px;
     font-style: normal;
     overflow: hidden;
+    position: relative;
     .left_header_box{
         height: 86px;
         line-height: 86px;
         margin: 39px 0 0 40px;
+        overflow: hidden;
     }
 }
 .left_content{
@@ -66,7 +67,6 @@
     box-sizing: border-box;
     margin: 0 0 34px 0;
     .left_content_right_top{
-        margin-left:106px;
         box-sizing: border-box;
         height: 266px;
         padding-top: 108px;
@@ -75,6 +75,7 @@
             height: 5px;
         }
         .warehouse{
+            margin-left:106px;
             height: 153px;
             display: flex;
             justify-content: space-between;
