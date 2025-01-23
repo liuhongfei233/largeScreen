@@ -10,8 +10,8 @@ export const GlobalContext = createContext();
 export const GlobalProvider = ({ children }) => {
   const [state, setState] = useState({});
   const { messages, connectWebSocket } = useWebSocket(
-    "ws://114.55.89.115:58080/webSocket"
-    // "ws://192.168.104.208:58080/webSocket"
+    // "ws://114.55.89.115:58080/webSocket"
+    "ws://192.168.104.208:58080/webSocket"
   );
   useEffect(() => {
     connectWebSocket();

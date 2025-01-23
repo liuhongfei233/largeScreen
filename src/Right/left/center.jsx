@@ -370,8 +370,14 @@ const Center = () => {
           />
         )}
       </div>
+      {/* 出灰开始倒计时 */}
+      {!data?.ydzdgljyx && data["zdchkdjs"] && (
+        <div style={{ position: "absolute", left: 390, bottom: 0 }}>
+          <CountDown id="2" total={data["zdchkdjs"]} />
+        </div>
+      )}
       {/* 出灰停止倒计时 */}
-      {data["zdchtdjs"] && (
+      {data?.ydzdgljyx && data["zdchtdjs"] && (
         <div style={{ position: "absolute", left: 390, bottom: 0 }}>
           <CountDown id="4" total={data["zdchtdjs"]} />
         </div>

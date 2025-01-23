@@ -34,20 +34,21 @@ const Top = () => {
           />
         )}
         {/* 轨道运输 */}
-        {(common["2czdgljyx"] || common["3czdgljyx"]) && (
-          <Stone
-            dir="left"
-            pos={
-              common["car7_1"]
-                ? 6
-                : common["car7_2"]
-                ? 5
-                : common["car7_3"]
-                ? 4
-                : 0
-            }
-          />
-        )}
+        {(common["2czdgljyx"] || common["3czdgljyx"]) &&
+          (common["car7_1"] || common["car7_2"] || common["car7_3"]) && (
+            <Stone
+              dir="left"
+              pos={
+                common["car7_1"]
+                  ? 6
+                  : common["car7_2"]
+                  ? 5
+                  : common["car7_3"]
+                  ? 4
+                  : 0
+              }
+            />
+          )}
       </div>
       <div className="warehouse">
         <div className="warehouse_main" style={{ position: "relative" }}>

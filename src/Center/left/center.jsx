@@ -28,7 +28,7 @@ const Center = () => {
   const data = state?.yao2 || {};
   const cameras = state?.cameras || [];
   return (
-    <div className="yao" style={{ marginLeft: 35 }}>
+    <div className="yao" style={{ marginLeft: 35, height: 701 }}>
       <div className="yao_main">
         <div className="yao_content">
           <img
@@ -371,8 +371,14 @@ const Center = () => {
           />
         )}
       </div>
+      {/* 出灰开始倒计时 */}
+      {!data?.ydzdgljyx && data["zdchkdjs"] && (
+        <div style={{ position: "absolute", left: 390, bottom: 0 }}>
+          <CountDown id="2" total={data["zdchkdjs"]} />
+        </div>
+      )}
       {/* 出灰停止倒计时 */}
-      {data["zdchtdjs"] && (
+      {data?.ydzdgljyx && data["zdchtdjs"] && (
         <div style={{ position: "absolute", left: 390, bottom: 0 }}>
           <CountDown id="2" total={data["zdchtdjs"]} />
         </div>

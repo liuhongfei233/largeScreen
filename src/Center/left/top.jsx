@@ -34,9 +34,10 @@ const Top = () => {
             />
           )}
 
-          {(common["2czdgljyx"] || common["3czdgljyx"]) && (
-            <Stone dir="right" pos={8} />
-          )}
+          {(common["2czdgljyx"] || common["3czdgljyx"]) &&
+            (common["car7_4"] || common["car7_5"] || common["car7_6"]) && (
+              <Stone dir="right" pos={8} />
+            )}
         </div>
         <div style={{ position: "absolute", top: -150, left: 0 }}>
           <Cang
@@ -65,7 +66,7 @@ const Top = () => {
             total={common["4c_lw4glw"]}
             id={2}
             shou={
-              (common["2czdgljyx"] || common["2czdgljyx"]) && common["car7_4"]
+              (common["2czdgljyx"] || common["3czdgljyx"]) && common["car7_4"]
             }
           />
           <Cang
@@ -74,7 +75,7 @@ const Top = () => {
             total={common["5c_lw5glw"]}
             id={22}
             shou={
-              (common["2czdgljyx"] || common["2czdgljyx"]) && common["car7_5"]
+              (common["2czdgljyx"] || common["3czdgljyx"]) && common["car7_5"]
             }
           />
           <Cang
@@ -83,7 +84,7 @@ const Top = () => {
             total={common["6c_lw6glw"]}
             id={222}
             shou={
-              (common["2czdgljyx"] || common["2czdgljyx"]) && common["car7_6"]
+              (common["2czdgljyx"] || common["3czdgljyx"]) && common["car7_6"]
             }
           />
           <div className="warehouse_list">

@@ -38,7 +38,7 @@ const Center = () => {
     if (data?.jyxcw == 0) return "下超";
   }, [data]);
   return (
-    <div className="yao">
+    <div className="yao" style={{ height: 701 }}>
       <div className="yao_main">
         <div className="yao_content">
           <img
@@ -383,8 +383,14 @@ const Center = () => {
           />
         )}
       </div>
+      {/* 出灰开始倒计时 */}
+      {!data?.ydzdgljyx && data["zdchkdjs"] && (
+        <div style={{ position: "absolute", left: 390, bottom: 0 }}>
+          <CountDown id="2" total={data["zdchkdjs"]} />
+        </div>
+      )}
       {/* 出灰停止倒计时 */}
-      {data["zdchtdjs"] && (
+      {data?.ydzdgljyx && data["zdchtdjs"] && (
         <div style={{ position: "absolute", left: 390, bottom: 0 }}>
           <CountDown id="1" total={data["zdchtdjs"]} />
         </div>

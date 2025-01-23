@@ -56,7 +56,7 @@ export default ({ shou, open, lw, total, style, id, type = 1, special }) => {
         src={require(`../assets/cang/${imgName}.png`)}
         alt=""
       />
-      {percent && !special && (
+      {percent && total && !special && (
         <div
           style={{
             position: "absolute",
